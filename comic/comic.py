@@ -4,5 +4,9 @@ def load_site(classname):
 
 
 if __name__ == '__main__':
-    comic = load_site('dmzj')
-    print(comic.search('妖精')[1].get_chapters()[0].get_images())
+    import sys
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
+
+    comic = load_site('kukudm')
+    print(comic.search('妖精')[0].get_chapters()[0].get_images())
