@@ -1,6 +1,4 @@
 # coding: utf-8
-
-
 def load_site(classname):
     return getattr(__import__('sites.' + classname), classname).Site()
 
