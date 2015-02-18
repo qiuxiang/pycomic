@@ -21,8 +21,8 @@ class Site(BaseSite):
 
     class Comic(BaseComic):
         def fetch_chapters(self):
-            soup = BeautifulSoup(requests.get(self.metadata['url']).text)
-            for item in soup.select('.cartoon_online_border a'):
+            for item in BeautifulSoup(requests.get(
+                    self.metadata['url']).text).select('.cartoon_online_border a'):
                 yield {
                     'url': 'http://manhua.dmzj.com' + item.get('href'),
                     'name': item.text,
